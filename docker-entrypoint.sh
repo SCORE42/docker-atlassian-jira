@@ -18,4 +18,7 @@ if [ "$(stat --format "%Y" "${JIRA_INSTALL}/conf/server.xml")" -eq "0" ]; then
   fi
 fi
 
+chown -R daemon.daemon /opt/atlassian/jira/logs
+chown -R daemon.daemon /var/atlassian/jira
+
 exec "$@"
